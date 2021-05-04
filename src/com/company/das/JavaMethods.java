@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JavaMethods {
+
 	static ArrayList<Integer> list = new ArrayList<Integer>();
 
 	// 1. Sum methods
@@ -98,51 +99,49 @@ public class JavaMethods {
 		System.out.println("After swap:  a is: " + a + " b is: " + b);
 	}
 
-	//13. FindFibonacci series
+	// 13. FindFibonacci series
 	public void findFibonacci(int a) {
-		int num1=0;
-		int num2=1;
-		System.out.println( num1+" "+num2);
-		
-		int sum=0;
-		for(int i=2;i<=a;i++) {
-		
-			
+		int num1 = 0;
+		int num2 = 1;
+		System.out.print(num1 + " " + num2 + " ");
+
+		for (int i = 2; i < a; i++) {
+			int sum = num1 + num2;
+			num1 = num2;
+			num2 = sum;
+			System.out.print(sum + " ");
 		}
+		System.out.println();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	// 1.Check Prime number
+
+	// 14. find maximum and minimum numbers from an array
+	public void findMinAndMax(int a[]) {
+
+		int max = a[0];
+		int min = a[0];
+		for (int i = 0; i < a.length; i++) {
+			if ((a[i]) > max) {
+				max = a[i];
+			}
+
+			if ((a[i]) < min) {
+				min = a[i];
+			}
+		}
+		System.out.println("Maximum in array is: " + max);
+		System.out.println("Minimum in array is: " + min);
+	}
+
+	// 15. Check prime Number
 	public static boolean isPrimeNumber(int num) {
-		// System.out.print("The number: "+num+" ");
+		// System.out.println("The number is: "+num);
+		// boolean isPrime=false;
 
 		// check for boundary
 		if (num <= 1) {
 			return false;
 		}
+
 		for (int i = 2; i < num; i++) {
 			if (num % i == 0) {
 				return false;
@@ -151,58 +150,55 @@ public class JavaMethods {
 		return true;
 	}
 
-	// 2.Range of Prime Numbers
+	// 16 Range of PrimeNumbers
 	public static void primeNumbers(int num) {
 		for (int i = 2; i <= num; i++) {
 			if (isPrimeNumber(i)) {
-				// System.out.print(i+" ");
 				list.add(i);
 			}
 		}
-		System.out.println("Size of the list: " + list.size());
-		System.out.println(list);
+		System.out.println("Size of the list " + list.size());
+		System.out.println("List is: " + list);
 	}
 
-	// 3.Armstrong Number
-	public static boolean isArmstrong(int num) {
+	// 17. Check Armstrong number
+	public static boolean isArmstrongNumber(int num) {
 		int rem;
 		int cube = 0;
 		int temp;
-
 		temp = num;
 		while (num > 0) {
 			rem = num % 10;
-			num = num / 10;
 			cube = cube + (rem * rem * rem);
+			num = num / 10;
 		}
 		if (temp == cube) {
-			// System.out.println(temp + " is the Armstrong number");
 			return true;
+			// System.out.println(temp + " is the Armstrong number");
 		} else {
 			// System.out.println(temp + " is not an Armstrong number");
 			return false;
 		}
 	}
 
-	// 4. Armstrong Numbers upto given integer
+	// 18. Armstrong Numbers upto given number
 	public static void armstrongNumbers(int num) {
 		System.out.println("Armstrong numbers upto: " + num + " ");
 		for (int i = 0; i <= num; i++) {
-			if (isArmstrong(i)) {
+			if (isArmstrongNumber(i)) {
 				System.out.print(i + " ");
 			}
 		}
 		System.out.println();
 	}
 
-	// 5.Palindrome Number
+	// 19. check if the number is palindrome number
 	public static boolean isPalindrome(int num) {
-
 		int rem;
 		int sum = 0;
 		int temp;
 		temp = num;
-		while (num > 0) {
+		while (num != 0) {
 			rem = num % 10;
 			num = num / 10;
 			sum = sum * 10 + rem;
@@ -215,7 +211,7 @@ public class JavaMethods {
 		return false;
 	}
 
-	// 6.Palindrome numbers upto given integer
+	// 19..Palindrome numbers upto given integer
 	public static void palindromeNumbers(int num) {
 		System.out.print("Palindrome numbers are: ");
 		for (int i = 1; i <= num; i++) {
@@ -226,7 +222,7 @@ public class JavaMethods {
 		System.out.println();
 	}
 
-	// 7. Fibonacci Series
+	// 20. Fibonacci Series
 	public static void fibonacciSeries(int a) {
 		List<Integer> fseries = new ArrayList<Integer>();
 		int sum = 0;
@@ -247,6 +243,58 @@ public class JavaMethods {
 		}
 		System.out.println(fseries);
 		// System.out.println();
+	}
+
+	// 21. Reverse of a Number
+	public static void reverseNum(int a) {
+		int temp;
+		int reverse = 0;
+		int rem;
+		temp = a;
+		while (a != 0) {
+			rem = a % 10;
+			reverse = reverse * 10 + rem;
+			a = a / 10;
+		}
+		System.out.println("Reverse of " + temp + " is " + reverse);
+	}
+
+	// 22. Finding area of a rectangle
+	public static void areaOfRectangle(double length, double width) {
+		double area = length * width;
+		System.out.println("Area of Rectangle is: " + area);
+	}
+
+	// 22. Finding area of a square
+	public static void areaOfSquare(double side) {
+		double area = side * side;
+		System.out.println("Area of Rectangle is: " + area);
+	}
+
+	// 23. Find area of a Circle
+	public static void areaOfCircle(double radius) {
+		double area = Math.PI * (radius * radius);
+		System.out.println("Area of Circle is: " + area);
+	}
+
+	// 24.Swaping two arrays
+	public static void swapString(String a, String b) {
+		System.out.println("Before swap Value of firstString: " + a + " value of SecondString: " + b);
+		a = a + b;
+		b = a.substring(0, a.length() - b.length());
+		a = a.substring(b.length());
+		System.out.println("After swap Value of firstString: " + a + " value of SecondString: " + b);
+	}
+
+	// 25. Digit count
+	public static void digitCount(int num) {
+		int count = 0;
+		int temp = num;
+		while (temp != 0) {
+			temp = temp / 10;
+			count++;
+		}
+		System.out.println(count + " is the number of digits of the given number:" + num);
 	}
 
 }

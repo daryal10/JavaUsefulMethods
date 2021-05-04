@@ -11,7 +11,7 @@ public class TestJavaMethods {
 		String[] x = { "hari", "mohan", "dinesh", "hari", "prakash" };
 
 		JavaMethods obj = new JavaMethods();
-		
+
 		obj.add(10, 10);
 		obj.add(-100, -200);
 
@@ -51,8 +51,63 @@ public class TestJavaMethods {
 		obj.swapNumbers(10, 20);
 		obj.swapNumbers(100, 200);
 
+		obj.findFibonacci(10);
+		obj.findFibonacci(20);
+
+		obj.findMinAndMax(a);
+		obj.findMinAndMax(b);
+
+		System.out.println(JavaMethods.isPrimeNumber(1));
+		System.out.println(JavaMethods.isPrimeNumber(2));
+		System.out.println(JavaMethods.isPrimeNumber(4));
+		System.out.println(JavaMethods.isPrimeNumber(5));
+		System.out.println(JavaMethods.isPrimeNumber(11));
+
+		JavaMethods.primeNumbers(20);
+		JavaMethods.primeNumbers(100);
+
+		System.out.println(JavaMethods.isArmstrongNumber(50));
+		System.out.println(JavaMethods.isArmstrongNumber(1));
+		System.out.println(JavaMethods.isArmstrongNumber(153));
+		System.out.println(JavaMethods.isArmstrongNumber(370));
+		System.out.println(JavaMethods.isArmstrongNumber(371));
+		System.out.println(JavaMethods.isArmstrongNumber(409));
+
+		JavaMethods.armstrongNumbers(100);
+		JavaMethods.armstrongNumbers(300);
+		JavaMethods.armstrongNumbers(100000000);
+
+		System.out.println(JavaMethods.isPalindrome(121));
+		System.out.println(JavaMethods.isPalindrome(131));
+		System.out.println(JavaMethods.isPalindrome(123));
+
+		JavaMethods.palindromeNumbers(100);
+		JavaMethods.palindromeNumbers(200);
+		JavaMethods.palindromeNumbers(1000);
+
+		JavaMethods.fibonacciSeries(10);
+		JavaMethods.fibonacciSeries(20);
+
+		JavaMethods.reverseNum(100);
+		JavaMethods.reverseNum(1234);
+		JavaMethods.reverseNum(2345);
+
+		JavaMethods.areaOfRectangle(2, 10);
+		JavaMethods.areaOfRectangle(2, 10);
+
+		JavaMethods.areaOfSquare(5);
+		JavaMethods.areaOfSquare(10);
+
+		JavaMethods.areaOfCircle(5);
+		JavaMethods.areaOfCircle(10);
+
+		JavaMethods.swapString("Ram", "Mohan");
+		JavaMethods.swapString("pqr", "xyz");
 		
-		
+		JavaMethods.digitCount(4);
+		JavaMethods.digitCount(10);
+		JavaMethods.digitCount(101);
+		JavaMethods.digitCount(10004);
 		
 
 	}
