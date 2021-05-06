@@ -137,7 +137,7 @@ public class JavaMethods {
 		// System.out.println("The number is: "+num);
 		// boolean isPrime=false;
 
-		// check for boundary
+		// Check for boundary
 		if (num <= 1) {
 			return false;
 		}
